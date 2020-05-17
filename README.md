@@ -9,3 +9,13 @@ Proyecto elaborado en Django usando una base de datos `sqlite3`
 
 1. Ejecutar las migraciones para que se generen las tablas necesarias `python manage.py migrate`
 1. Iniciar el servidor de desarrollo `python manage.py runserver`
+
+
+## Estructura del proyecto
+* `lectura/urls.py` es donde se declaran las rutas que puede resolver el servidor
+
+* `templates` todo lo que son los html's para mostrar en las `views`.
+
+* `users` es la aplicación encargar de manejar la autenticación de los usuarios
+  
+* `static` archivos estaticos utilizados en los html's
