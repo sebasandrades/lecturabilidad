@@ -1,0 +1,20 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{%url "home" %}">
+        <img src="{% static "img/logo.png" %}" height="45" class="d-inline-block align-top" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <div class="d-flex w-100">
+            <h4 class="flex-fill text-center text-white">Título por definir</h4>
+        </div>
+        {% if 'about'  not in request.path  %}
+            <a href="{% url "about" %}" class="text-white">Acerca de esta pagina</a>
+        {% endif %}
+        <a href="{%url "logout" %}" class="btn btn-danger my-2 my-sm-0"  role="button" >Cerrar sesión</a>
+    </div>
+</nav>

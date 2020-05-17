@@ -25,7 +25,9 @@ SECRET_KEY = '=46+!h_d^o55b3xv+c$8+*q31)g)bo)ch4j)-u(@uku(+((ny#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "80610152.ngrok.io"
+]
 
 
 # Application definition
@@ -127,4 +129,7 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
+# Navegara a esta ruta cuando elusuario no este autenticado
+LOGIN_URL='/users/login'
+
 

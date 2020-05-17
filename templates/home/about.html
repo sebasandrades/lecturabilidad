@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block head_content %}
+<title>Acerca de esta página | Proyecto final</title>
+{% endblock %}
+
+{% block container %}
+{% load static %}
+
+     <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-sm-12 col-md-5 col-lg-5 pt-2 pl-5 pr-5 pb-5" id="auth-container">
+
+                <img src="{% static "img/logo.png" %}" class="img-fluid rounded mx-auto d-block pb-4" style="max-width: 60%;">
+                <h5 class="text-center">Esta página fue diseñada para encontrar el indice de Lecturabilidad de un text</h5>
+                <p><strong>Creada por</strong>Sebastian Andrades,Carlos Guitierrez y Daniel Paz</p>
+                <h6>Utilizando <code>Django</code></h6>
+              
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

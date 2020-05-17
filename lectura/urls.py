@@ -2,16 +2,23 @@
     Punto de entrada del projecto
     Aquí se declaran las rutas que resolverá el servidor de Django
 """
+# Importacion de Django
 from django.contrib import admin
 from django.urls import path
 from django.shortcuts import render
 
-def login(request):
-    return render(request,'users/login.html',)
-def signup(request):
-    return render(request,'users/signup.html',)
+# Proyecto
+from users import views as userViews
+from lectura import views as lectura_views
+
+
+
 
 urlpatterns = [
-    path('users/login/', login,name='login'),
-    path('users/signup/', signup,name='signup'),
+    path('admin/', admin.site.urls),
+    path('users/login/', userViews.login_view,name='login'),
+    path('users/signup/', userViews.signup,name='signup'),
+    path('users/logout/', userViews.logout_view,name='logout'),
+    path('', lectura_views.home_view,name='home'),
+    path('about/', lectura_views.about_view,name='about'),
 ]
