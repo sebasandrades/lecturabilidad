@@ -7,7 +7,6 @@ from django.db.utils import IntegrityError
 
 
 
-
 """SignUp"""
 def signup(request):
   if request.method == 'POST':
@@ -35,12 +34,9 @@ def signup(request):
 def login_view(request):
   """Login View"""
   if request.method == 'POST':
-    print('*'*10)
     username = request.POST['email']
     password = request.POST['password']
     user = authenticate(request, username=username, password=password)
-    print(username,':',password)
-    print('*'*10)
     if user:
       login(request,user)
       return redirect('home')

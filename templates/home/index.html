@@ -9,11 +9,16 @@
 
      <div class="container h-100">
         <div class="row h-100 justify-content-center align-items-center">
-            <div class="col-sm-12 col-md-5 col-lg-5 pt-2 pl-5 pr-5 pb-5" id="auth-container">
-
+            <div class="col-sm-12 col-md-5 col-lg-7 pt-2 pl-5 pr-5 pb-5" id="auth-container">
                 <img src="{% static "img/logo.png" %}" class="img-fluid rounded mx-auto d-block pb-4" style="max-width: 60%;">
-
-
+                <form action="{%url "home" %}" method="post" class="mt-2">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <textarea name="text" class="form-control" placeholder="Ingrese texto aquì" rows="3"></textarea>
+                      </div>
+                    <button class="btn btn-success btn-block mt-5" type="submit">Analizar</button>
+                </form>
+                
             </div>
         </div>
     </div>
