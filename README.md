@@ -19,3 +19,14 @@ Proyecto elaborado en Django usando una base de datos `sqlite3`
 * `users` es la aplicación encargar de manejar la autenticación de los usuarios
   
 * `static` archivos estaticos utilizados en los html's
+
+
+# Preparación para desplegar en Heroku [Ver tutorial](https://codigofacilito.com/articulos/deploy-django-heroku)
+
+1. `pip install gunicorn` gunicorn es un servidor HTTP para Unix.
+1. `pip install psycopg2==2.7.5` gestor de base de datos PostgreSQL
+1. `pip install dj-database-url`  Para realizar la conexión entre el proyecto y el gestor de base de datos
+1. `pip install python-decouple` Libreria facil de utilizar para acceder a las variables de entorno
+
+
+

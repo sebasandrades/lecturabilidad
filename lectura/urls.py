@@ -6,6 +6,8 @@
 from django.contrib import admin
 from django.urls import path
 from django.shortcuts import render
+from django.conf import settings
+from django.conf.urls.static import static
 
 # Proyecto
 from users import views as userViews
@@ -21,4 +23,4 @@ urlpatterns = [
     path('users/logout/', userViews.logout_view,name='logout'),
     path('', lectura_views.home_view,name='home'),
     path('about/', lectura_views.about_view,name='about'),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
