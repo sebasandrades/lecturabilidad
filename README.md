@@ -1,5 +1,7 @@
 # Lecturabilidad
-Proyecto elaborado en Django usando una base de datos `sqlite3`
+Proyecto elaborado en Django usando una base de datos `PostgreSQL`
+
+## [Página Principal](https://lecturabilidad.herokuapp.com/)
 ### Configuración del entorno
 > Es necesario tener instalado la version 3.7 de python o posterior
 
