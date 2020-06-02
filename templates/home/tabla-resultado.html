@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block head_content %}
+<title>Resultados | Proyecto final</title>
+{% endblock %}
+
+{% block container %}
+{% load static %}
+<div class="container h-100">
+    <img src="{% static "img/logo.png" %}" class="img-fluid rounded mx-auto d-block pb-4" style="max-width: 60%;">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-sm-12 pt-2 pl-5 pr-5 pb-5">
+            <h3 class="text-center">
+                Información general del texto 
+            </h3>
+                    <p class="alert alert-secondary" role="alert">
+                        {{text |truncatewords:100}}
+                    </p>
+            <table class="table">
+                <tbody >
+                    {% for col1,col2 in info %}
+                    <tr>
+                        <td class="border-0">{{col1}}</td>
+                        <td class="border-0">{{col2}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-12 pt-2 pl-5 pr-5 pb-5">
+            <h3 class="text-center">Resultados</h3>
+            <p>Tu resultado es.... {{resultado}}</p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Puntos</th>
+                        <th scope="col">Estilo</th>
+                        <th scope="col">Tipo de Publicación</th>
+                        <th scope="col">Estudios</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for fila in tabla_flesch %}
+                    {% if tabla_1_hightlight == fila.id %}
+                        <tr class="table-success">
+                            <td>{{fila.puntos}}</td>
+                            <td>{{fila.estilo}}</td>
+                            <td>{{fila.tipopublicacion}}</td>
+                            <td>{{fila.estudios}}</td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td>{{fila.puntos}}</td>
+                            <td>{{fila.estilo}}</td>
+                            <td>{{fila.tipopublicacion}}</td>
+                            <td>{{fila.estudios}}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row h-100 align-items-center">
+        <div class="col-sm-6 pt-2 pl-5 pr-5 pb-5">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Puntos</th>
+                        <th scope="col">INFLESZ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for fila in tabla_inflesz %}
+                        {% if tabla_2_hightlight == fila.id %}
+                            <tr class="table-success">
+                                <th>{{fila.puntos}}</th>
+                            <th>{{fila.inflesz}}</th>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <th>{{fila.puntos}}</th>
+                                <th>{{fila.inflesz}}</th>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

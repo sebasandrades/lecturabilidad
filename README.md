@@ -22,6 +22,8 @@ Proyecto elaborado en Django usando una base de datos `PostgreSQL`
   
 * `static` archivos estaticos utilizados en los html's
 
+* `lecture/tablas_resultados` aquí se encuentrans las tablas `tabla_flesch` y `tabla_inflesz`
+
 
 # Preparación para desplegar en Heroku [Ver tutorial](https://codigofacilito.com/articulos/deploy-django-heroku)
 
