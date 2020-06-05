@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .tablas_resultados.tabla_flesch import tabla_flesch
 from .tablas_resultados.tabla_inflesz import tabla_inflesz
 from .funciones import contar_vocales,count_letters,count_sentences,count_words,count_all_syllables,calcular_perspicuidad
-
+from users.models import Resultado
 
 @login_required
 def home_view(request):
@@ -21,6 +21,10 @@ def home_view(request):
       num_palabras = num_words,
       num_frases = num_sentences
     )
+    resultado = Resultado()
+    resultado.user = request.user
+    resultado.perspicuidad = perspicuidad
+    resultado.save()
 
     num_vocales_str = '{} vocales = {}'.format(numero_str,num_vocales)
     num_letters_str = '{} letras = {}'.format(numero_str,num_letters)
